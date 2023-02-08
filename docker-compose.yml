@@ -1,0 +1,33 @@
+version: "3"
+networks:
+  hummingbot:
+
+services:
+  bot1: 
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    networks:
+      - hummingbot
+    environment:
+      CONFIG_FILE_NAME: "paper-amm-rebus-3.yml"
+      # STRATEGY: 'paper-amm-rebus-3.yml'
+      CONFIG_PASSWORD: "Hello1234!"
+    # volumes:
+    #   - "./hummingbot_files/hummingbot_conf:/conf"
+    #   - "./hummingbot_files/hummingbot_logs:/logs"
+    #   - "./hummingbot_files/hummingbot_data:/data"
+    #   - "./hummingbot_files/hummingbot_pmm_scripts:/pmm_scripts"
+    #   - "./hummingbot_files/hummingbot_scripts:/scripts"
+
+
+  # hummingbot:
+  #   build:
+  #     context: ./
+  #     dockerfile: ./Dockerfile
+  #   networks:
+  #     - hummingbot
+  #   environment:
+  #     STRATEGY: "paper-amm-rebus-3.yml"
+  #     CONFIG_FILE_NAME: "conf_client.yml"
+  #     CONFIG_PASSWORD: "Hello1234!"

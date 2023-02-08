@@ -1,0 +1,153 @@
+2023-02-08 17:43:29,848 - 1 - root - ERROR - Error loading configs. Your config file may be corrupt. while scanning a simple key
+  in "/home/hummingbot/conf/conf_fee_overrides.yml", line 242, column 1
+could not find expected ':'
+  in "/home/hummingbot/conf/conf_fee_overrides.yml", line 242, column 63
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/config/config_helpers.py", line 710, in load_yml_into_cm_legacy
+    data = yaml_parser.load(stream) or {}
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/main.py", line 343, in load
+    return constructor.get_single_data()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/constructor.py", line 111, in get_single_data
+    node = self.composer.get_single_node()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/composer.py", line 78, in get_single_node
+    document = self.compose_document()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/composer.py", line 101, in compose_document
+    node = self.compose_node(None, None)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/composer.py", line 138, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/composer.py", line 218, in compose_mapping_node
+    item_value = self.compose_node(node, item_key)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/composer.py", line 111, in compose_node
+    if self.parser.check_event(AliasEvent):
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/parser.py", line 140, in check_event
+    self.current_event = self.state()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/parser.py", line 603, in parse_block_mapping_value
+    if self.scanner.check_token(ValueToken):
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/scanner.py", line 1763, in check_token
+    self.fetch_more_tokens()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/scanner.py", line 233, in fetch_more_tokens
+    return self.fetch_stream_end()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/scanner.py", line 455, in fetch_stream_end
+    self.remove_possible_simple_key()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/scanner.py", line 394, in remove_possible_simple_key
+    raise ScannerError(
+ruamel.yaml.scanner.ScannerError: while scanning a simple key
+  in "/home/hummingbot/conf/conf_fee_overrides.yml", line 242, column 1
+could not find expected ':'
+  in "/home/hummingbot/conf/conf_fee_overrides.yml", line 242, column 63
+2023-02-08 17:43:30,029 - 1 - root - ERROR - Error writing configs: while scanning a simple key
+  in "/home/hummingbot/conf/conf_fee_overrides.yml", line 242, column 1
+could not find expected ':'
+  in "/home/hummingbot/conf/conf_fee_overrides.yml", line 242, column 63
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/config/config_helpers.py", line 789, in save_to_yml_legacy
+    data = yaml_parser.load(stream) or {}
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/main.py", line 343, in load
+    return constructor.get_single_data()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/constructor.py", line 111, in get_single_data
+    node = self.composer.get_single_node()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/composer.py", line 78, in get_single_node
+    document = self.compose_document()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/composer.py", line 101, in compose_document
+    node = self.compose_node(None, None)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/composer.py", line 138, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/composer.py", line 218, in compose_mapping_node
+    item_value = self.compose_node(node, item_key)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/composer.py", line 111, in compose_node
+    if self.parser.check_event(AliasEvent):
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/parser.py", line 140, in check_event
+    self.current_event = self.state()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/parser.py", line 603, in parse_block_mapping_value
+    if self.scanner.check_token(ValueToken):
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/scanner.py", line 1763, in check_token
+    self.fetch_more_tokens()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/scanner.py", line 233, in fetch_more_tokens
+    return self.fetch_stream_end()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/scanner.py", line 455, in fetch_stream_end
+    self.remove_possible_simple_key()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/scanner.py", line 394, in remove_possible_simple_key
+    raise ScannerError(
+ruamel.yaml.scanner.ScannerError: while scanning a simple key
+  in "/home/hummingbot/conf/conf_fee_overrides.yml", line 242, column 1
+could not find expected ':'
+  in "/home/hummingbot/conf/conf_fee_overrides.yml", line 242, column 63
+2023-02-08 17:44:38,119 - 1 - root - ERROR - Error loading configs. Your config file may be corrupt. while scanning a simple key
+  in "/home/hummingbot/conf/conf_fee_overrides.yml", line 242, column 1
+could not find expected ':'
+  in "/home/hummingbot/conf/conf_fee_overrides.yml", line 242, column 63
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/config/config_helpers.py", line 710, in load_yml_into_cm_legacy
+    data = yaml_parser.load(stream) or {}
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/main.py", line 343, in load
+    return constructor.get_single_data()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/constructor.py", line 111, in get_single_data
+    node = self.composer.get_single_node()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/composer.py", line 78, in get_single_node
+    document = self.compose_document()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/composer.py", line 101, in compose_document
+    node = self.compose_node(None, None)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/composer.py", line 138, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/composer.py", line 218, in compose_mapping_node
+    item_value = self.compose_node(node, item_key)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/composer.py", line 111, in compose_node
+    if self.parser.check_event(AliasEvent):
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/parser.py", line 140, in check_event
+    self.current_event = self.state()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/parser.py", line 603, in parse_block_mapping_value
+    if self.scanner.check_token(ValueToken):
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/scanner.py", line 1763, in check_token
+    self.fetch_more_tokens()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/scanner.py", line 233, in fetch_more_tokens
+    return self.fetch_stream_end()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/scanner.py", line 455, in fetch_stream_end
+    self.remove_possible_simple_key()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/scanner.py", line 394, in remove_possible_simple_key
+    raise ScannerError(
+ruamel.yaml.scanner.ScannerError: while scanning a simple key
+  in "/home/hummingbot/conf/conf_fee_overrides.yml", line 242, column 1
+could not find expected ':'
+  in "/home/hummingbot/conf/conf_fee_overrides.yml", line 242, column 63
+2023-02-08 17:44:38,200 - 1 - root - ERROR - Error writing configs: while scanning a simple key
+  in "/home/hummingbot/conf/conf_fee_overrides.yml", line 242, column 1
+could not find expected ':'
+  in "/home/hummingbot/conf/conf_fee_overrides.yml", line 242, column 63
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/config/config_helpers.py", line 789, in save_to_yml_legacy
+    data = yaml_parser.load(stream) or {}
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/main.py", line 343, in load
+    return constructor.get_single_data()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/constructor.py", line 111, in get_single_data
+    node = self.composer.get_single_node()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/composer.py", line 78, in get_single_node
+    document = self.compose_document()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/composer.py", line 101, in compose_document
+    node = self.compose_node(None, None)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/composer.py", line 138, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/composer.py", line 218, in compose_mapping_node
+    item_value = self.compose_node(node, item_key)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/composer.py", line 111, in compose_node
+    if self.parser.check_event(AliasEvent):
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/parser.py", line 140, in check_event
+    self.current_event = self.state()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/parser.py", line 603, in parse_block_mapping_value
+    if self.scanner.check_token(ValueToken):
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/scanner.py", line 1763, in check_token
+    self.fetch_more_tokens()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/scanner.py", line 233, in fetch_more_tokens
+    return self.fetch_stream_end()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/scanner.py", line 455, in fetch_stream_end
+    self.remove_possible_simple_key()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/ruamel/yaml/scanner.py", line 394, in remove_possible_simple_key
+    raise ScannerError(
+ruamel.yaml.scanner.ScannerError: while scanning a simple key
+  in "/home/hummingbot/conf/conf_fee_overrides.yml", line 242, column 1
+could not find expected ':'
+  in "/home/hummingbot/conf/conf_fee_overrides.yml", line 242, column 63
+2023-02-08 21:13:46,598 - 1 - root - ERROR - Error loading configs. Your config file may be corrupt. [Errno 2] No such file or directory: '/home/hummingbot/hummingbot/templates/conf_None_strategy_TEMPLATE.yml'
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/config/config_helpers.py", line 713, in load_yml_into_cm_legacy
+    with open(template_file_path, "r", encoding="utf-8") as template_fd:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/hummingbot/hummingbot/templates/conf_None_strategy_TEMPLATE.yml'
