@@ -234,10 +234,12 @@ class StartCommand(GatewayChainApiManager):
                         f"Run `status` command to query the progress.")
             self.logger().info("start command initiated.")
 
+            self.logger().info(self._trading_required)
             if self._trading_required:
                 self.kill_switch = self.client_config_map.kill_switch_mode.get_kill_switch(self)
                 await self.wait_till_ready(self.kill_switch.start)
         except Exception as e:
+            self.logger().info(str(e), exc_info=True)
             self.logger().error(str(e), exc_info=True)
 
     def _initialize_strategy(self, strategy_name: str):
