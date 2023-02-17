@@ -210,7 +210,7 @@ class StartCommand(GatewayChainApiManager):
             tick_size = self.client_config_map.tick_size
             self.logger().info(f"Creating the clock with tick size: {tick_size}")
             self.clock = Clock(ClockMode.REALTIME, tick_size=tick_size)
-            print(self.markets)
+            self.logger().info(self.markets)
             for market in self.markets.values():
                 if market is not None:
                     self.clock.add_iterator(market)
