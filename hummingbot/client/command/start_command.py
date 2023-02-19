@@ -211,6 +211,8 @@ class StartCommand(GatewayChainApiManager):
             self.logger().info(f"Creating the clock with tick size: {tick_size}")
             self.clock = Clock(ClockMode.REALTIME, tick_size=tick_size)
             self.logger().info(self.markets)
+            self.logger().info(self.strategy)
+
             for market in self.markets.values():
                 if market is not None:
                     self.clock.add_iterator(market)
@@ -225,6 +227,7 @@ class StartCommand(GatewayChainApiManager):
                     self.strategy_name, list(self.markets.values()), self.strategy
                 )
             except ValueError as e:
+                self.logger().info(e)
                 self.notify(f"Error: {e}")
             if self._pmm_script_iterator is not None:
                 self.clock.add_iterator(self._pmm_script_iterator)
