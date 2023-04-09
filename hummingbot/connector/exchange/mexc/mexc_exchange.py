@@ -714,6 +714,9 @@ class MexcExchange(ExchangeBase):
                            order_type: OrderType,
                            price: Optional[Decimal] = s_decimal_0):
 
+        # forcing LIMIT orders
+        order_type = OrderType.LIMIT
+
         trading_rule = self._trading_rules[trading_pair]
 
         if not order_type.is_limit_type():
