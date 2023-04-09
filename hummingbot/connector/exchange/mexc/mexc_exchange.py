@@ -607,6 +607,7 @@ class MexcExchange(ExchangeBase):
                           order_type: OrderType,
                           price: Decimal) -> str:
 
+        # forcing LIMIT orders
         order_type = OrderType.LIMIT
 
         if order_type is OrderType.LIMIT:
@@ -641,6 +642,9 @@ class MexcExchange(ExchangeBase):
                           price: Optional[Decimal] = s_decimal_0):
 
         trading_rule = self._trading_rules[trading_pair]
+
+        # forcing LIMIT orders
+        order_type = OrderType.LIMIT
 
         if not order_type.is_limit_type():
             self.trigger_event(self.MARKET_ORDER_FAILURE_EVENT_TAG,
