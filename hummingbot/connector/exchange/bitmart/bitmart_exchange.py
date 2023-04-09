@@ -232,6 +232,9 @@ class BitmartExchange(ExchangePyBase):
         """
         result = []
         for rule in symbols_details["data"]["symbols"]:
+            if rule["symbol"] == "FUTURE-AI_USDT":
+                continue
+            
             if bitmart_utils.is_exchange_information_valid(rule):
                 try:
                     trading_pair = await self.trading_pair_associated_to_exchange_symbol(rule["symbol"])
