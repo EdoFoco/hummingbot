@@ -607,10 +607,12 @@ class MexcExchange(ExchangeBase):
                           order_type: OrderType,
                           price: Decimal) -> str:
 
-        if order_type is OrderType.LIMIT:
-            order_type_str = "LIMIT_ORDER"
-        elif order_type is OrderType.LIMIT_MAKER:
-            order_type_str = "POST_ONLY"
+        order_type = OrderType.LIMIT
+
+        # if order_type is OrderType.LIMIT:
+        #     order_type_str = "LIMIT_ORDER"
+        # elif order_type is OrderType.LIMIT_MAKER:
+        #     order_type_str = "POST_ONLY"
 
         data = {
             'client_order_id': order_id,
