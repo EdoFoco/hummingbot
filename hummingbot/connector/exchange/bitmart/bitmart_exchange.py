@@ -234,7 +234,7 @@ class BitmartExchange(ExchangePyBase):
         for rule in symbols_details["data"]["symbols"]:
             if rule["symbol"] == "FUTURE-AI_USDT":
                 continue
-            
+
             if bitmart_utils.is_exchange_information_valid(rule):
                 try:
                     trading_pair = await self.trading_pair_associated_to_exchange_symbol(rule["symbol"])
@@ -280,7 +280,7 @@ class BitmartExchange(ExchangePyBase):
     async def _request_order_update(self, order: InFlightOrder) -> Dict[str, Any]:
         return await self._api_get(
             path_url=CONSTANTS.GET_ORDER_DETAIL_PATH_URL,
-            params={"clientOrderId": order.client_order_id},
+            params={"order_id": order.exchange_order_id},
             is_auth_required=True)
 
     async def _request_order_fills(self, order: InFlightOrder) -> Dict[str, Any]:
