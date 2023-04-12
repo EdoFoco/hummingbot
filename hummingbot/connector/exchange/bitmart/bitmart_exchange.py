@@ -191,7 +191,7 @@ class BitmartExchange(ExchangePyBase):
 
     async def _place_cancel(self, order_id: str, tracked_order: InFlightOrder):
         api_params = {
-            "clientOrderId": order_id,
+            "order_id": order_id,
         }
         cancel_result = await self._api_post(
             path_url=CONSTANTS.CANCEL_ORDER_PATH_URL,
